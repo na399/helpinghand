@@ -23,7 +23,7 @@
             <h1 class="navbar-brand">
                 <a href="/">
                     <span class="sr-only">{{ request.site.name }}</span>
-                    <img src="{% static "img/logo-main@print.png" %}" alt="{{ request.site.name }}" />
+                    <b>HELPING<span style="color: #00b3ee">HAND</span></b>
                 </a>
             </h1>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".js-navbar-header">
@@ -66,34 +66,10 @@
 <div class="feature-wrapper js-feature-wrapper">
     {% block feature %}
         {% placeholder "feature" or %}
-            <div class="feature-visual">
-                <img src="{% static 'img/visuals/feature-default.jpg' %}" alt="">
-            </div>
-            <div class="feature-content text-center">
-                <div class="spacer spacer-xs">&nbsp;</div>
-                <h1>{% trans "Lorem Ipsum" %}</h1>
-            </div>
         {% endplaceholder %}
     {% endblock feature %}
 </div>
 
-{% block breadcrumb %}
-{% if not request.current_page.is_home %}
-<!-- start: breadcrumb -->
-{# INFO: breadcrumb concept: http://getbootstrap.com/components/#breadcrumbs #}
-<nav class="navbar navbar-breadcrumb" role="navigation">
-    <h3 class="sr-only">{% trans "You are here" %}</h3>
-    <div class="container">
-        <ol class="breadcrumb">
-            {% block extend_breadcrumb %}
-            {% show_breadcrumb 0 "includes/menu/breadcrumb.html" %}
-            {% endblock extend_breadcrumb %}
-        </ol>
-    </div>
-</nav>
-<!-- end: breadcrumb -->
-{% endif %}
-{% endblock breadcrumb %}
 
 {% block messages %}
 {% if messages %}
