@@ -5,6 +5,9 @@
     <lastmod>2017-03-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>http://helping_hand.com/images/food_small.png</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>http://helping_hand.com/assets/text_field.mulib</loc>
