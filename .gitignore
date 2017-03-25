@@ -66,5 +66,5 @@ mailhog
 
 
 # ignore _local, -old
-# *_local
+*_local
 *-old/

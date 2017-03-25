@@ -6,8 +6,6 @@
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
 
 
-
-
 {% endaddtoblock %}
 
 {% block body_class %}tpl-base{% endblock %}
@@ -23,22 +21,13 @@
             <h1 class="navbar-brand">
                 <a href="/">
                     <span class="sr-only">{{ request.site.name }}</span>
-                    <b>HELPING<span style="color: #00b3ee">HAND</span></b>
+                    <img src="{% static "img/logo-main@print.png" %}" alt="{{ request.site.name }}" />
                 </a>
             </h1>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".js-navbar-header">
                 {% for row in 123|make_list %}<span class="icon-bar"></span>{% endfor %}
             </button>
         </div>
-
-        {# INFO: ensure the anchor names are callable #}
-        <h2 class="sr-only">{% trans "Shortcuts" %}</h2>
-        <ul class="skip-links">
-            <li><a href="/" title="[Alt + 0]" accesskey="0">{% trans "Go to home" %}</a></li>
-            <li><a href="#navigation" title="[Alt + 1]" accesskey="1">{% trans "Jump to navigation" %}</a></li>
-            <li><a href="#content" title="[Alt + 2]" accesskey="2">{% trans "Jump to content" %}</a></li>
-            <li><a href="#footer" title="[Alt + 3]" accesskey="3">{% trans "Contact" %}</a></li>
-        </ul>
 
         <div class="navbar-collapse collapse js-navbar-header">
             {% block navbar %}
@@ -50,7 +39,6 @@
                     {% show_menu 0 100 100 100 "includes/menu/navigation.html" %}
                     <li class="divider" role="presentation"><span class="sr-only">{% trans "Separator" %}</span></li>
                     {% show_menu_below_id "meta" 0 100 100 100 "includes/menu/navigation.html" %}
-                    <!-- {% language_chooser "includes/menu/langnav.html" "native" %} -->
                 </ul>
                 {% endwith %}
                 {% endrender_model_block %}
@@ -89,25 +77,9 @@
 
 {% block footer %}
 <!-- start: footer -->
-<footer class="footer">
-    <h2 class="sr-only" id="footer">{% trans "Sitemap" %}</h2>
-
-    <div class="footer-copyright">
-        <div class="container">
-            {% render_model_block request.current_page "changelist" %}
-            <ul class="list-inline">
-                <li class="pull-right"><a href="#page-top" data-spy="scroll">{% trans "Back to top" %} <span class="fa fa-right fa-arrow-up"></span></a></li>
-                {% show_menu_below_id "footer" 0 0 100 100 "includes/menu/navigation.html" %}
-            </ul>
-            {% endrender_model_block %}
-            {% static_placeholder "footer" %}
-        </div>
-    </div>
-
-    <div class="footer-theme">
-        <div class="container">
-            {% static_placeholder "footer-theme" %}
-        </div>
+<footer>
+    <div class="container">
+        {% static_placeholder "footer" %}
     </div>
 </footer>
 <!-- end: footer -->
@@ -115,17 +87,8 @@
 
 {% addtoblock "js" %}
 
-    <!-- Back To Top -->
-    <a href="javascript:void(0);" class="s-back-to-top js__back-to-top"></a>
-
-    <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
 
     <script src="{% static 'js/addons/cl.explorer.js' %}"></script>
-
-
-
-
-    <!--========== END JAVASCRIPTS ==========-->
 
 {% endaddtoblock %}
 {% endblock extend_root %}

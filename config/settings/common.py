@@ -276,7 +276,6 @@ ADMIN_URL = r'^admin/'
 CMS_TEMPLATES = (
     ('base_empty.html', 'empty template'),
     ('tpl_home.html', 'home page template'),
-    ('sira_home.html', 'SIRA home'),
     ('content.html', 'content'),
     ('fullwidth.html', 'full width'),
     ('sidebar_left.html', 'sidebar left'),
