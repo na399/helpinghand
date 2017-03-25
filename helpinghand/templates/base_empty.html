@@ -1,0 +1,16 @@
+{% extends "base_root.html" %}
+{% load i18n staticfiles cms_tags menu_tags sekizai_tags %}
+
+{% block body_class %}tpl-base{% endblock %}
+
+{% block extend_root %}
+    {% block extend_base %}
+        {% block content %}
+          {% placeholder "content" or %}
+            <p>This page has no content yet. Make sure you are in <em>Edit</em> mode
+               (hit the <strong>Edit page</strong> button if required). Then switch to
+               <em>Structure</em> mode.</p>
+          {% endplaceholder %}
+        {% endblock content %}
+    {% endblock extend_base %}
+{% endblock extend_root %}
