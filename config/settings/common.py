@@ -64,6 +64,7 @@ CMS_APPS =(
     'djangocms_googlemap',
     'djangocms_snippet',
     'djangocms_style',
+    'aldryn_bootstrap3',
 
 )
 

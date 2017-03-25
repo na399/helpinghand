@@ -66,3 +66,4 @@ djangocms-style>=1.7
 djangocms-googlemap>=0.5
 djangocms-snippet>=1.9
 djangocms-video>=2.0
+aldryn-bootstrap3
