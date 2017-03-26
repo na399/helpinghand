@@ -1,3 +1,336 @@
-{% extends "fullwidth.html" %}
+{% extends "base.html" %}
+{% load i18n staticfiles cms_tags sekizai_tags %}
+
+
 
 {% block body_class %}tpl-home{% endblock %}
+
+
+{% block extrahead %}
+
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
+
+        <!-- Vendor Styles -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/themify/themify.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/scrollbar/scrollbar.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/swiper/swiper.min.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}" rel="stylesheet" type="text/css"/>
+
+        <!-- Theme Styles -->
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+        <link href="{% static 'css/global/global.css' %}" rel="stylesheet" type="text/css"/>
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+        <!--========== SWIPER SLIDER ==========-->
+        <div class="s-swiper js__swiper-one-item">
+            <!-- Swiper Wrapper -->
+            <div class="swiper-wrapper">
+                <div class="g-fullheight--xs g-bg-position--center swiper-slide" style="background: url({% static 'img/support2_overlay.jpg' %});">
+                    <div class="container g-text-center--xs g-ver-center--xs">
+                        <div class="g-margin-b-30--xs">
+                            <h1 class="g-font-size-35--xs g-font-size-45--sm g-font-size-55--md g-color--white">We organize<br>your support network</h1>
+                        </div>
+                        <a class="js__popup__youtube" href="https://www.youtube.com/watch?v=lcFYdgZKZxY" title="Intro Video">
+                            <i class="s-icon s-icon--lg s-icon--white-bg g-radius--circle ti-control-play"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="tint g-fullheight--xs g-bg-position--center swiper-slide" style="background: url({% static 'img/community.jpg' %});">
+                    <div class="container g-text-center--xs g-ver-center--xs">
+                        <div class="g-margin-b-30--xs">
+                            <div class="g-margin-b-30--xs">
+                                <h2 class="g-font-size-35--xs g-font-size-45--sm g-font-size-55--md g-color--white">Let them know how you are feeling</h2>
+                            </div>
+                            <a class="js__popup__youtube" href="https://www.youtube.com/watch?v=lcFYdgZKZxY" title="Intro Video">
+                                <i class="s-icon s-icon--lg s-icon--white-bg g-radius--circle ti-control-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Swiper Wrapper -->
+
+            <!-- Arrows -->
+            <a href="javascript:void(0);" class="s-swiper__arrow-v1--right s-icon s-icon--md s-icon--white-brd g-radius--circle ti-angle-right js__swiper-btn--next"></a>
+            <a href="javascript:void(0);" class="s-swiper__arrow-v1--left s-icon s-icon--md s-icon--white-brd g-radius--circle ti-angle-left js__swiper-btn--prev"></a>
+            <!-- End Arrows -->
+
+            <a href="#js__scroll-to-section" class="s-scroll-to-section-v1--bc g-margin-b-15--xs">
+                <span class="g-font-size-18--xs g-color--white ti-angle-double-down"></span>
+                <p class="text-uppercase g-color--white g-letter-spacing--3 g-margin-b-0--xs">Learn More</p>
+            </a>
+        </div>
+        <!--========== END SWIPER SLIDER ==========-->
+
+        <!--========== PAGE CONTENT ==========-->
+        <!-- Features -->
+        <div id="js__scroll-to-section" class="container g-padding-y-80--xs g-padding-y-125--sm">
+            <!--
+
+            <div class="g-text-center--xs g-margin-b-100--xs">
+                <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Welcome to HelpingHand</p>
+                <h2 class="g-font-size-32--xs g-font-size-36--md">We Create Beautiful Experiences <br> That Drive Successful Businesses.</h2>
+            </div>
+            <div class="row g-margin-b-60--xs g-margin-b-70--md">
+                <div class="col-sm-4 g-margin-b-60--xs g-margin-b-0--md">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".1s">
+                                <i class="g-font-size-28--xs g-color--primary ti-desktop"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">Responsive Layout</h3>
+                            <p class="g-margin-b-0--xs">This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 g-margin-b-60--xs g-margin-b-0--md">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".2s">
+                                <i class="g-font-size-28--xs g-color--primary ti-settings"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">Fully Customizable</h3>
+                            <p class="g-margin-b-0--xs">This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".3s">
+                                <i class="g-font-size-28--xs g-color--primary ti-ruler-alt-2"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">Pixel Perfect</h3>
+                            <p class="g-margin-b-0--xs">This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- // end row  -->
+            <div class="row">
+                <div class="col-sm-4 g-margin-b-60--xs g-margin-b-0--md">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".4s">
+                                <i class="g-font-size-28--xs g-color--primary ti-package"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">A Coordinated schedule</h3>
+                            <p class="g-margin-b-0--xs">Your weekly schedule makes easy for others to know what do you need help with</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 g-margin-b-60--xs g-margin-b-0--md">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".5s">
+                                <i class="g-font-size-28--xs g-color--primary ti-star"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">AI Inside</h3>
+                            <p class="g-margin-b-0--xs">Let Neural Networks suggest to your friends what to do.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="clearfix">
+                        <div class="g-media g-width-30--xs">
+                            <div class="wow fadeInDown" data-wow-duration=".3" data-wow-delay=".6s">
+                                <i class="g-font-size-28--xs g-color--primary ti-panel"></i>
+                            </div>
+                        </div>
+                        <div class="g-media__body g-padding-x-20--xs">
+                            <h3 class="g-font-size-18--xs">The onion is your friend</h3>
+                            <p class="g-margin-b-0--xs">An intuitive graphic interface easy to use as piece of cake.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // end row  -->
+        </div>
+        <!-- End Features -->
+
+        <!-- Parallax -->
+        <div class="js__parallax-window" style="background: url({% static 'img/loved_cropped.jpg' %}); 1% 0 no-repeat fixed;">
+            <div class="container g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="g-margin-b-80--xs">
+                    <h2 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md g-color--primary-to-blueviolet-ltr">Gather help from your loved ones</h2>
+                </div>
+                <a href="http://keenthemes.com/" class="text-uppercase s-btn s-btn--md s-btn--white-brd g-radius--50">Learn More</a>
+            </div>
+        </div>
+        <!-- End Parallax -->
+
+        <!-- Culture -->
+        <div class="g-promo-section">
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="row">
+                    <div class="col-md-4 g-margin-t-15--xs g-margin-b-60--xs g-margin-b-0--lg">
+                        <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">What are we?</p>
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
+                            <h2 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md">About</h2>
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                            <h2 class="g-font-size-40--xs g-font-size-50--sm g-font-size-60--md">HelpingHand</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-md-offset-1">
+                        <p class="g-font-size-18--xs">Being diagnosed with cancer brings great complications into everyday life, and repeatedly asking for help can become yet another heavy burden to overcome. Patients often don't know what to expect from their close relatives or how to express their needs efficiently. HelpingHand aims at providing an easy to use interface that enables sharing a weekly schedule that only inner circles of close friends or relatives have access to. This way, any of these circles members can volunteer to help in the tasks shared by the user. Moreover, an AI system provides insights on the state of the patient and suggests new tasks he might not come up with.</p>
+                        <p class="g-font-size-18--xs"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Culture -->
+
+        <!-- Subscribe -->
+
+
+        <div class="js__parallax-window" style="background: url({% static 'img/superhero2.png' %}); 5% 0 no-repeat fixed;">
+
+            <div class="g-container--sm g-text-center--xs g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="g-margin-b-80--xs">
+                    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--white-opacity g-letter-spacing--2 g-margin-b-25--xs">Sign up</p>
+                    <h2 class="g-font-size-32--xs g-font-size-36--md g-color--white">Volunteer</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                        <form class="input-group">
+                            <input type="email" class="form-control s-form-v1__input g-radius--left-50" name="email" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button type="submit" class="s-btn s-btn-icon--md s-btn-icon--white-brd s-btn--white-brd g-radius--right-50"><i class="ti-arrow-right"></i></button>
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Subscribe -->
+
+
+
+        <!-- Clients -->
+        <div class="g-bg-color--sky-light">
+            <div class="g-container--md g-padding-y-80--xs g-padding-y-125--sm">
+                <!-- Swiper Clients -->
+                <div class="s-swiper js__swiper-clients">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".1s">
+                                <img class="s-clients-v1" src="{% static 'img/deloitte.jpg' %}" alt="Clients Logo">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="wow fadeIn" data-wow-duration=".3" data-wow-delay=".1s">
+                                <img class="s-clients-v1" src="{% static 'img/cancer_logo.png' %}" alt="Clients Logo">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- End Swiper Clients -->
+            </div>
+        </div>
+        <!-- End Clients -->
+
+
+
+        <!-- Feedback Form -->
+        <div class="g-bg-color--sky-light">
+            <div class="container g-padding-y-80--xs g-padding-y-125--sm">
+                <div class="g-text-center--xs g-margin-b-80--xs">
+                    <p class="text-uppercase g-font-size-14--xs g-font-weight--700 g-color--primary g-letter-spacing--2 g-margin-b-25--xs">Feedback</p>
+                    <h2 class="g-font-size-32--xs g-font-size-36--md">Send us a note</h2>
+                </div>
+                <form>
+                    <div class="row g-margin-b-40--xs">
+                        <div class="col-sm-6 g-margin-b-20--xs g-margin-b-0--md">
+                            <div class="g-margin-b-20--xs">
+                                <input type="text" class="form-control s-form-v2__input g-radius--50" placeholder="* Name">
+                            </div>
+                            <div class="g-margin-b-20--xs">
+                                <input type="email" class="form-control s-form-v2__input g-radius--50" placeholder="* Email">
+                            </div>
+                            <input type="text" class="form-control s-form-v2__input g-radius--50" placeholder="* Phone">
+                        </div>
+                        <div class="col-sm-6">
+                            <textarea class="form-control s-form-v2__input g-radius--10 g-padding-y-20--xs" rows="8" placeholder="* Your message"></textarea>
+                        </div>
+                    </div>
+                    <div class="g-text-center--xs">
+                        <button type="submit" class="text-uppercase s-btn s-btn--md s-btn--primary-bg g-radius--50 g-padding-x-80--xs">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Feedback Form -->
+
+        <!-- Google Map -->
+        <section class="s-google-map">
+            <div id="js__google-container" class="s-google-container g-height-400--xs"></div>
+        </section>
+        <!-- End Google Map -->
+
+{% endblock %}
+
+
+
+{% block extrafoot %}
+
+        <!-- Back To Top -->
+
+        <!--========== JAVASCRIPTS (Load javascripts at bottom, this will reduce page load time) ==========-->
+        <!-- Vendor -->
+        <script type="text/javascript" src="{% static 'vendor/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/jquery.migrate.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/jquery.smooth-scroll.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/jquery.back-to-top.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/scrollbar/jquery.scrollbar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/swiper/swiper.jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/waypoint.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/counterup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/jquery.parallax.min.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsXUGTFS09pLVdsYEE9YrO2y4IAncAO2U' %}"></script>
+        <script type="text/javascript" src="{% static 'vendor/jquery.wow.min.js' %}"></script>
+
+        <!-- General Components and Settings -->
+        <script type="text/javascript" src="{% static 'js/global.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/header-sticky.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/scrollbar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/swiper.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/counter.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/portfolio-3-col.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/parallax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/google-map.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/components/wow.min.js' %}"></script>
+
+{% endblock %}
+

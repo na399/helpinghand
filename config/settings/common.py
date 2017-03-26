@@ -282,6 +282,7 @@ CMS_TEMPLATES = (
     ('fullwidth.html', 'full width'),
     ('sidebar_left.html', 'sidebar left'),
     ('sidebar_right.html', 'sidebar right'),
+    ('request_task.html', 'Request task'),
     ('404.html', '404 template'),
 )
 

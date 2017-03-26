@@ -69,8 +69,10 @@
 {% endif %}
 {% endblock messages %}
 
+{% if not request.current_page.is_home %}
     <div style="padding-bottom: 80px">
     </div>
+{% endif %}
 
 {% block extend_base %}
     {% block content %}{% endblock %}
@@ -90,8 +92,8 @@
 
 {% addtoblock "js" %}
 
-
     <script src="{% static 'js/addons/cl.explorer.js' %}"></script>
+    <script src="{% static 'js/onion.js' %}"></script>
 
 {% endaddtoblock %}
 {% endblock extend_root %}
