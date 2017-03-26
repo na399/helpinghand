@@ -47,8 +47,6 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     'helpinghand.users',  # custom users app
     # Your stuff: custom apps go here
-    'task_requesting',
-    'task_offering',
 )
 
 CMS_APPS =(
