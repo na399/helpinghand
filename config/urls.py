@@ -24,7 +24,7 @@ urlpatterns = [
 
     # Your stuff: custom urls includes go here
     # Home with CMS, must be the last one
-    url(r'^', include('cms.urls')),
+    url(r'^', include('cms.urls'), name='cms'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
