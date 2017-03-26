@@ -19,6 +19,9 @@ urlpatterns = [
     url(r'^users/', include("helpinghand.users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
 
+    # App
+    url(r'^task_requesting/', include("task_requesting.urls", namespace="task_requesting")),
+
     # Your stuff: custom urls includes go here
     # Home with CMS, must be the last one
     url(r'^', include('cms.urls')),

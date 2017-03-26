@@ -40,12 +40,15 @@ THIRD_PARTY_APPS = (
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+    #'allauth.socialaccount.providers.facebook',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'helpinghand.users',  # custom users app
     # Your stuff: custom apps go here
+    'task_requesting',
+    'task_offering',
 )
 
 CMS_APPS =(
@@ -147,7 +150,7 @@ if False:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Asia/Bangkok'
+TIME_ZONE = 'Europe/Copenhagen'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGES = (
@@ -262,7 +265,6 @@ if False:
 # Custom user app defaults
 # Select the correct user model
 AUTH_USER_MODEL = 'users.User'
-LOGIN_REDIRECT_URL = 'users:redirect'
 LOGIN_URL = 'account_login'
 
 # SLUGLIFIER

@@ -1,0 +1,17 @@
+{% extends CMS_TEMPLATE %}
+
+
+{% block content %}
+    <div>
+        {% if TaskRequest %}
+        <ul>
+            {% for TaskRequest in TaskRequests %}
+            <li>
+                {{ TaskRequest.title }}
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock content %}

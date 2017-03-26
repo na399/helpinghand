@@ -1,0 +1,21 @@
+{% extends CMS_TEMPLATE %}
+
+
+{% block content %}
+    <br>
+    <br>
+
+    <div>
+        {% if TaskRequests %}
+        <ul>
+            {% for TaskRequest in TaskRequests %}
+            <li>
+                <a href="/">{{ TaskRequest.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            Task not found!
+        {% endif %}
+    </div>
+{% endblock content %}
